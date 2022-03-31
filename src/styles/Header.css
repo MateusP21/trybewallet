@@ -1,0 +1,29 @@
+header {
+  align-items: center;
+  background-color: rgb(27, 27, 27);
+  border-bottom: 1px solid #4c4c4d;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  gap: 16px;
+}
+
+.header-content p {
+  background-color: #1f2022;
+  border: 1px solid #4c4c4d;
+  border-radius: 4px;
+  display: flex;
+  font-weight: 600;
+  gap: 8px;
+  padding: 8px;
+}
+
+.header-content span {
+  color: rgb(20, 220, 97);
+  font-weight: 400;
+}
