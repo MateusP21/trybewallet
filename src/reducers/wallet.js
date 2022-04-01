@@ -13,7 +13,11 @@ const walletReducer = (state = INITIAL_STATE, action) => {
   case 'RESPONSE_CURRENCIES':
     return { ...state,
       isLoading: false,
-      currencies: action.payload,
+      currencies: Object.keys(action.payload),
+    };
+  case 'SAVE_EXPENSES':
+    return { ...state,
+      expenses: [...state.expenses, action.payload],
     };
   default:
     return state;

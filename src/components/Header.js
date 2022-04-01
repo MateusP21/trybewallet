@@ -5,7 +5,7 @@ import '../styles/Header.css';
 
 class Header extends React.Component {
   render() {
-    const { userEmail } = this.props;
+    const { userEmail, expenses } = this.props;
 
     return (
       <header className="header">
@@ -22,7 +22,19 @@ class Header extends React.Component {
           </p>
           <p>
             Total:
-            <span data-testid="total-field">0</span>
+            <span data-testid="total-field">
+              {
+                expenses.length > 0 && expenses.reduce(
+                  (accumulator, current) => {
+                    const { exchangeRates, currency, value } = current;
+                    const total = accumulator + (Number(value)
+                    * exchangeRates[currency].ask);
+                    return total;
+                  }, 0,
+                ).toFixed(2)
+              }
+
+            </span>
           </p>
 
           <p>
@@ -38,9 +50,11 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => ({
   userEmail: state.user.email,
+  expenses: state.wallet.expenses,
 });
 
 Header.propTypes = {
   userEmail: PropTypes.string.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default connect(mapStateToProps)(Header);
