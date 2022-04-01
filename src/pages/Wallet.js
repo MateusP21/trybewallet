@@ -11,9 +11,9 @@ class Wallet extends React.Component {
     super();
 
     this.state = {
-      value: '',
+      value: 0,
       method: '',
-      currency: '',
+      currency: 'USD',
       tag: '',
       description: '',
     };
@@ -33,9 +33,9 @@ class Wallet extends React.Component {
 
   resetState = () => {
     this.setState({
-      value: '',
+      value: 0,
       method: '',
-      currency: '',
+      currency: 'USD',
       tag: '',
       description: '',
     });

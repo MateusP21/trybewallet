@@ -24,14 +24,15 @@ class Header extends React.Component {
             Total:
             <span data-testid="total-field">
               {
-                expenses.length > 0 && expenses.reduce(
+
+                expenses.length > 0 ? expenses.reduce(
                   (accumulator, current) => {
                     const { exchangeRates, currency, value } = current;
                     const total = accumulator + (Number(value)
                     * exchangeRates[currency].ask);
                     return total;
                   }, 0,
-                ).toFixed(2)
+                ).toFixed(2) : '0.00'
               }
 
             </span>
