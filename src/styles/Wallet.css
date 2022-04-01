@@ -1,0 +1,14 @@
+form {
+  background-color: rgb(8, 8, 15);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  padding: 16px;
+  width: 100%;
+}
+
+.wallet-container {
+  display: flex;
+  width: 100%;
+}
