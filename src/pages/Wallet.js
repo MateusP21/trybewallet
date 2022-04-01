@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { fetchCurrencies, saveExpenses } from '../actions/index';
 import '../styles/Wallet.css';
+import Table from '../components/Table';
 
 class Wallet extends React.Component {
   constructor() {
@@ -140,6 +141,7 @@ class Wallet extends React.Component {
             </label>
             <button onClick={ this.handleSubmit } type="button">Adicionar despesa</button>
           </form>
+          <Table />
         </div>
       </>);
   }
