@@ -16,6 +16,10 @@ const saveExpensesAction = (payload) => ({
   payload,
 });
 
+const removeExpense = (payload) => ({
+  type: 'REMOVE_EXPENSE',
+  payload,
+});
 const fetchCurrencies = () => async (dispatch) => {
   dispatch(requestCurrencies());
   const currencies = await (await fetch(ENDPOINT)).json();
@@ -31,5 +35,5 @@ const saveExpenses = (state) => async (dispatch, getState) => {
 };
 
 module.exports = {
-  actionLogin, requestCurrencies, fetchCurrencies, saveExpenses,
+  actionLogin, requestCurrencies, fetchCurrencies, saveExpenses, removeExpense,
 };
