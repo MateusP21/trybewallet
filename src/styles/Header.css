@@ -1,10 +1,10 @@
 header {
   align-items: center;
-  background-color: rgb(27, 27, 27);
-  border-bottom: 1px solid #4c4c4d;
+  background-color: #171717;
+  border-bottom: 1px solid #2d2d2d;
   display: flex;
-  justify-content: space-around;
-  padding: 8px 16px;
+  justify-content: space-between;
+  padding: 16px;
   width: 100%;
 }
 
@@ -15,7 +15,7 @@ header {
 
 .header-content p {
   background-color: #1f2022;
-  border: 1px solid #4c4c4d;
+  border: 1px solid #2d2d2d;
   border-radius: 4px;
   display: flex;
   font-weight: 600;

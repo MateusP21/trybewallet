@@ -1,0 +1,98 @@
+table {
+  background-color: black;
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+  display: grid;
+  text-align: center;
+}
+
+thead {
+  background-color: #171717;
+  border-bottom: 1px solid #2d2d2d;
+  color: rgb(229, 212, 255);
+  font-size: 14px;
+}
+
+tbody {
+  background-color: rgb(12, 11, 11);
+}
+
+th , td {
+  display: flex;
+  height: 100%;
+  padding: 8px;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+}
+
+
+th:hover {
+  background-color: rgb(12, 11, 11);
+}
+
+
+td {
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+th:not( :first-child ) , td:not( :first-child ) {
+  border-left: 1px solid #2d2d2d;
+}
+
+
+td:hover {
+  background-color: #272727;
+}
+
+
+.edit-button {
+  background-color: transparent;
+  border: 1px solid rgb(255, 115, 0);
+  border-radius: 4px;
+  color: rgb(255, 158, 67);
+  font-weight: 700;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.edit-button:hover {
+  background-color: rgb(255, 158, 67);
+  color: black;
+}
+
+.remove-button {
+  background-color: transparent;
+  border: 1px solid orangered;
+  border-radius: 4px;
+  color: orangered;
+  font-weight: 700;
+  width: 100%;
+}
+
+.remove-button:hover {
+  background-color: orangered;
+  color: black;
+}
+
+tr {
+  align-items: center;
+  border-collapse: collapse;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(9, minmax(100px, 1fr));
+  text-align: center;
+}
+
+tr:not( :first-child ) {
+  border-top: 1px solid #2d2d2d;
+}
+
+
+tbody tr > td:last-child {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

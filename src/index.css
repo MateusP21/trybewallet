@@ -5,10 +5,11 @@
    box-sizing: border-box;
  }
 body {
+  
   font-family: 'Noto Sans',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #23272a;
+  background:#0f0f0f;
   color: #e8eaed;
 }
 #root {
@@ -20,4 +21,37 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+input {
+  background-color: #272727;
+  border: 1px solid #717172;
+  color: #e8eaed;
+  padding: 8px;
+}
+
+select {
+background-color: #272727;
+  border: 1px solid #717172;
+  color: #e8eaed;
+  padding: 8px;
+}
+
+
+button {
+  background: #1e1e1f;
+  border: none;
+  color: #e8eaed;
+  cursor: pointer;
+  padding: 8px;
+  
+   width: max-content;
+  height: max-content;
+}
+
+
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
