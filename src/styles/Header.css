@@ -1,7 +1,7 @@
 header {
   align-items: center;
-  background-color: #171717;
-  border-bottom: 1px solid #2d2d2d;
+  background-color: #4107ff15;
+  border-bottom: 1px solid #1f1f49;
   display: flex;
   justify-content: space-between;
   padding: 16px;
@@ -14,7 +14,7 @@ header {
 }
 
 .header-content p {
-  background-color: #1f2022;
+  background-color: #1c1244;
   border: 1px solid #2d2d2d;
   border-radius: 4px;
   display: flex;

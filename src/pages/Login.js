@@ -18,7 +18,9 @@ class Login extends React.Component {
   verifyFields = () => {
     const { email, password } = this.state;
     const minLength = 6;
-    if (email.includes('@email.com') && password.length >= minLength) {
+    const mailRgx = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+
+    if (mailRgx.test(email) && password.length >= minLength) {
       this.setState({
         buttonDisabled: false,
       });

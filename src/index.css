@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap');
- *{
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap'); *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
  }
 body {
   
-  font-family: 'Noto Sans',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:#0f0f0f;
+  background:#090615;
   color: #e8eaed;
+}
+
+body,input,select,button {
+font-family: 'Lato',sans-serif;
 }
 #root {
    display: flex;
@@ -23,15 +25,16 @@ code {
     monospace;
 }
 input {
-  background-color: #272727;
-  border: 1px solid #717172;
+  border-radius: 2px;
+  background-color: #1c1244;
+  border: 1px solid #2c2c69;
   color: #e8eaed;
   padding: 8px;
 }
 
 select {
-background-color: #272727;
-  border: 1px solid #717172;
+  background-color: #1c1244;
+  border: 1px solid #2c2c69;
   color: #e8eaed;
   padding: 8px;
 }
@@ -54,4 +57,12 @@ label {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient( transparent,rgb(68, 38, 99)) 
 }

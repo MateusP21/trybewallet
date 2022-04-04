@@ -1,20 +1,20 @@
 table {
-  background-color: black;
-  border: 1px solid #2d2d2d;
+  border: 1px solid #1f1f49;
   border-radius: 4px;
   display: grid;
   text-align: center;
 }
 
 thead {
-  background-color: #171717;
-  border-bottom: 1px solid #2d2d2d;
-  color: rgb(229, 212, 255);
+  background-color: #4107ff15;
+  border-bottom: 1px solid #1f1f49;
+  color: rgb(255, 204, 251);
   font-size: 14px;
 }
 
 tbody {
-  background-color: rgb(12, 11, 11);
+  background-color: rgba(12, 11, 11, 0);
+  color: rgb(240, 240, 240);
 }
 
 th , td {
@@ -28,7 +28,7 @@ th , td {
 
 
 th:hover {
-  background-color: rgb(12, 11, 11);
+  background: #090615;
 }
 
 
@@ -38,12 +38,12 @@ td {
 }
 
 th:not( :first-child ) , td:not( :first-child ) {
-  border-left: 1px solid #2d2d2d;
+  border-left: 1px solid #1f1f49;
 }
 
 
 td:hover {
-  background-color: #272727;
+  background-color: #4107ff15;
 }
 
 
@@ -86,7 +86,7 @@ tr {
 }
 
 tr:not( :first-child ) {
-  border-top: 1px solid #2d2d2d;
+  border-top: 1px solid #1f1f49;
 }
 
 
