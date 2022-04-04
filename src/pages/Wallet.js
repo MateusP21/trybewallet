@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
-import { fetchCurrencies, saveExpenses } from '../actions/index';
+import { editExpense, fetchCurrencies, saveExpenses } from '../actions/index';
 import '../styles/Wallet.css';
 import Table from '../components/Table';
 
@@ -11,7 +11,7 @@ class Wallet extends React.Component {
     super();
 
     this.state = {
-      value: 0,
+      value: '',
       method: '',
       currency: 'USD',
       tag: '',
@@ -24,6 +24,13 @@ class Wallet extends React.Component {
     getCurrencies();
   }
 
+  componentDidUpdate(prevProps) {
+    const { isEditing } = this.props;
+    if (prevProps.isEditing !== isEditing) {
+      this.handleUpdateState();
+    }
+  }
+
   handleChange = ({ target }) => {
     const { name, value } = target;
     this.setState({
@@ -31,9 +38,21 @@ class Wallet extends React.Component {
     });
   }
 
+    handleUpdateState = () => {
+      const { selected:
+      { value, description, method, currency, tag } } = this.props;
+      this.setState({
+        value,
+        method,
+        currency,
+        tag,
+        description,
+      });
+    }
+
   resetState = () => {
     this.setState({
-      value: 0,
+      value: '',
       method: '',
       currency: 'USD',
       tag: '',
@@ -48,7 +67,7 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const { currencies } = this.props;
+    const { currencies, isEditing, editingExpense } = this.props;
     const { tag, value, currency, description, method } = this.state;
     return (
       <>
@@ -142,7 +161,15 @@ class Wallet extends React.Component {
                 id="description"
               />
             </label>
-            <button onClick={ this.handleSubmit } type="button">Adicionar despesa</button>
+            <button
+              onClick={ () => (
+                isEditing
+                  ? editingExpense(this.state)
+                  : this.handleSubmit()) }
+              type="button"
+            >
+              {isEditing ? 'Editar despesa' : 'Adicionar Despesa'}
+            </button>
           </form>
           <Table />
         </div>
@@ -153,14 +180,27 @@ class Wallet extends React.Component {
 Wallet.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
   getCurrencies: PropTypes.func.isRequired,
+  editingExpense: PropTypes.func.isRequired,
   saveMyExpenses: PropTypes.func.isRequired,
+  isEditing: PropTypes.bool.isRequired,
+  selected: PropTypes.shape({
+    value: PropTypes.string,
+    description: PropTypes.string,
+    method: PropTypes.string,
+    currency: PropTypes.string,
+    tag: PropTypes.string,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
+  isEditing: state.wallet.isEditing,
+  selected: state.wallet.selectedExpense,
 });
 const mapDispatchToProps = (dispatch) => ({
   getCurrencies: (state) => dispatch(fetchCurrencies(state)),
   saveMyExpenses: (state) => dispatch(saveExpenses(state)),
+
+  editingExpense: (state) => dispatch(editExpense(state)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

@@ -3,7 +3,8 @@ const INITIAL_STATE = {
   currencies: [],
   expenses: [],
   isLoading: false,
-
+  isEditing: false,
+  selectedExpense: {},
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -24,6 +25,19 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: state.expenses.filter((expense) => expense.id !== action.payload),
     };
+  case 'SET_EDITING':
+    return {
+      ...state,
+      isEditing: true,
+      selectedExpense: action.payload,
+    };
+  case 'EDIT_EXPENSE':
+    return {
+      ...state,
+      isEditing: false,
+      expenses: [...action.payload],
+    };
+
   default:
     return state;
   }
