@@ -28,14 +28,14 @@ input {
   border-radius: 2px;
   background-color: #1c1244;
   border: 1px solid #2c2c69;
-  color: #e8eaed;
+ color: rgb(255, 204, 251);
   padding: 8px;
 }
 
 select {
   background-color: #1c1244;
   border: 1px solid #2c2c69;
-  color: #e8eaed;
+ color: rgb(255, 204, 251);
   padding: 8px;
 }
 

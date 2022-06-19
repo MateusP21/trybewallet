@@ -9,7 +9,7 @@ class Header extends React.Component {
 
     return (
       <header className="header">
-        <h1>TrybeWallet</h1>
+        <h1>Trybe Wallet</h1>
         <div className="header-content">
           <p>
             Email:

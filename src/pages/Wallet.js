@@ -12,10 +12,10 @@ class Wallet extends React.Component {
 
     this.state = {
       value: '',
-      method: '',
+      method: 'Dinheiro',
       currency: 'USD',
-      tag: '',
-      description: '',
+      tag: 'Alimentação',
+      description: 'N/A',
     };
   }
 
@@ -50,13 +50,15 @@ class Wallet extends React.Component {
       });
     }
 
+    
+
   resetState = () => {
     this.setState({
       value: '',
-      method: '',
+      method: 'Dinheiro',
       currency: 'USD',
-      tag: '',
-      description: '',
+      tag: 'Alimentação',
+      description: 'N/A',
     });
   }
 
@@ -138,6 +140,7 @@ class Wallet extends React.Component {
                 name="tag"
                 id="category"
               >
+
                 {['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde']
                   .map((category) => (
                     <option
